@@ -3,6 +3,7 @@ import os
 
 from flask import Flask
 
+
 def create_app():
     app = Flask(__name__)
     app.config.from_mapping(
@@ -13,6 +14,7 @@ def create_app():
         DATABASE_PASSWORD=os.environ.get('FLASK_DATABASE_PASSWORD'),
         DATABASE_USER=os.environ.get('FLASK_DATABASE_USER'),
         DATABASE=os.environ.get('FLASK_DATABASE'),
+        DATABASE_PORT=os.environ.get('FLASK_DATABASE_PORT'),
     )
     from . import db
 
