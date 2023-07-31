@@ -14,7 +14,7 @@ def create_app():
         DATABASE_PASSWORD=os.environ.get('FLASK_DATABASE_PASSWORD'),
         DATABASE_USER=os.environ.get('FLASK_DATABASE_USER'),
         DATABASE=os.environ.get('FLASK_DATABASE'),
-        DATABASE_PORT=os.environ.get('FLASK_DATABASE_PORT'),
+        DATABASE_PORT=int(os.environ.get('FLASK_DATABASE_PORT', 3306)),
     )
     from . import db
 
